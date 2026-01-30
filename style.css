@@ -1,22 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --special-color: #8B4513;
-  background-color: #F5F5DC;
+  --primary-brown: #4A3428;
+  --accent-color: #C7956D;
+  --light-bg: #FAF7F2;
+  --white: #FFFFFF;
+  background-color: #FAF7F2;
 }
 
 body {
   box-sizing: border-box;
-  width: 99vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: full;
   height: auto;
-  padding: 20px;
-  /* border: 1px solid black; */
+  overflow-x: hidden;
 }
 p {
   line-height: 1.6; /* Sets line spacing to 1.6 times the font size */
@@ -25,7 +28,7 @@ p {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .secondary-font {
   font-family: "Poppins", sans-serif;
@@ -40,27 +43,35 @@ p {
 }
 
 .navbar {
-  position: fixed; /* helps keep the navbar stick to top*/
-  top: 0; /* helps keep the navbar stick to top*/
-  z-index: 999; /* Keeps navbar above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  flex-wrap: nowrap;
-  background: #E8DCC4; /* Optional background */
-  border-radius: 5px;
-  margin: 10px auto;
-  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2); /* h v blur spread color */
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: var(--white);
+  border-bottom: 1px solid #E0E0E0;
 }
 
 .hero {
   width: 100%;
-  padding-top: 10px;
-  display: flex;
-  align-items: self-end;
-  justify-content: baseline;
-  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.hero h1 {
+  color: var(--primary-brown);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .bottom-text {
@@ -68,7 +79,7 @@ p {
 }
 
 .special-color {
-  color: #6F4E37;
+  color: var(--accent-color);
 }
 
 .horizontal-menu {
@@ -85,17 +96,14 @@ p {
   margin: 0; /* Removes default margin */
 }
 .vertical-menu a {
-  /* Styles the links as blocks to fill the width */
   display: block;
-  padding: 5px 5px; /* Adds padding inside each menu item */
-  background-color: #E8DCC4;
-  color: var(--special-color);
-  text-decoration: none; /* Removes default underline */
-  border-radius: 4px;
+  padding: 6px 0;
+  color: #DDD;
+  text-decoration: none;
 }
 
 .vertical-menu a:hover {
-  background-color: #262424;
+  color: var(--accent-color);
 }
 .horizontal-menu li {
   padding: 10px 10px; /* Adds spacing around menu items */
@@ -107,169 +115,195 @@ p {
 }
 
 .horizontal-menu a {
-  color: rgb(11, 13, 34);
-  text-decoration: none; /* Removes underlines */
-  font-size: 1.1rem;
-  font-weight: 600;
+  color: var(--primary-brown);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 15px;
 }
 
 .horizontal-menu a:hover {
-  color: var(--special-color);
+  color: var(--accent-color);
 }
 
 .banner {
-  margin: 10px auto;
-  display: grid;
-  max-width: 90%;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  justify-items: flex-end;
+  margin: 100px auto 40px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
+  text-align: center;
 }
 
 .banner-image {
-  width: 40vw;
-  display: inline-block;
+  display: none;
 }
 
 .plants {
-  width: 80vw;
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.plants h2 {
+  font-size: 2.5rem;
+  color: var(--primary-brown);
+  margin-bottom: 15px;
+}
+
+.plants > p {
+  color: #666;
+  max-width: 700px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 0;
 }
 
 .card {
-  background-color: #FFF8DC;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 6px 20px rgba(0, 0, 0, 0.1);
+  background: var(--white);
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card:hover {
+  border-color: var(--accent-color);
 }
 .card img {
-  /* Essential image styles */
-  width: 290px; /* Image takes the full width of the card container */
-  height: 300px; /* Example fixed height for uniform cards */
-  object-fit: cover; /* Crops the image to cover the area while maintaining aspect ratio */
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
 
-  /* Optional: Round the top corners of the image to match the card */
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.card h3 {
+  margin: 15px 20px 10px;
+  color: var(--primary-brown);
+  font-size: 1.1rem !important;
+}
+
+.card h4 {
+  margin: 0 20px 15px;
+  color: var(--accent-color);
+  font-size: 1rem !important;
+  font-weight: 600;
 }
 
 button {
-  display: inline-block; /* Allows padding and margin, and keeps it inline */
-  padding: 10px 10px; /* Space between text and border (top/bottom, left/right) */
-  text-align: center; /* Center the text */
-  text-decoration: none; /* Remove underlines from <a> tags */
-
-  /* Color and background */
-  background-color: var(--special-color);
-  color: white; /* White text color */
-
-  /* Font and appearance */
-  font-size: 16px; /* Increase font size */
-  cursor: pointer; /* Change mouse cursor to a hand on hover */
-  border: none; /* Remove default border */
-  border-radius: 8px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  width: calc(100% - 40px);
+  margin: 0 20px 20px;
+  padding: 12px 24px;
+  background: var(--primary-brown);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
 }
 
 button:hover {
-  /* Hover effect: changes background color when the user hovers over the button */
-
-  background-color: #6B4423; /* A different color on hover */
+  background-color: var(--accent-color);
 }
 
 .news-letter-container {
-  position: relative; /* Essential for positioning the pseudo-element */
   width: 100%;
-  height: 600px;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 60px 20px;
+  background: var(--light-bg);
+  text-align: center;
+  margin-top: 40px;
 }
 
-.news-letter-container::before {
-  content: "";
-  background-image: url("../assets/news-letter-bg.png");
-  background-size: cover;
-  position: absolute;
-  /* top: 0;
-    left: 0; */
-  width: 100%;
-  height: 100%;
-  opacity: 1; /* Set desired opacity here (0.0 to 1.0) */
-  z-index: -1; /* Places the image behind the container's content */
+.news-letter-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary-brown);
+  margin-bottom: 30px;
+}
+
+.news-letter-container input {
+  background: white;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.news-letter-container button {
+  background: var(--primary-brown);
+  color: white;
+  border: none;
+  width: auto;
+  margin: 0;
+  padding: 12px 30px;
 }
 
 footer {
-  width: 99%;
-  /* position: fixed; */
-  bottom: 0;
-  z-index: 999;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background: #E8DCC4; /* Optional background */
-  /* max-width: fit-content; */
-  padding: 40px;
-  gap: 20px;
-  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2); /* h v blur spread color */
+  background: var(--primary-brown);
+  padding: 50px 40px;
+  gap: 30px;
+  color: white;
+}
+
+footer img:first-child {
+  filter: brightness(0) invert(1);
 }
 
 /* for smaller screen */
 @media screen and (max-width: 768px) {
-  body {
-    width: 90%;
-    margin: 0 auto;
-    padding: auto;
-  }
-  .horizontal-menu li {
-    padding: 5px 5px; /* Adds spacing around menu items */
+  .navbar {
+    padding: 15px 20px;
   }
 
-  .banner {
-    width: fit-content;
-    display: flex; /* Hide an element on small screens */
+  .horizontal-menu {
     flex-wrap: wrap;
-    flex-direction: column-reverse;
-    justify-items: baseline;
-    align-items: flex-start;
-  }
-  .banner-image {
-    width: 90vw;
   }
 
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
+  .horizontal-menu li {
     padding: 5px;
   }
 
-  .email-div {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  .hero h1 {
+    font-size: 2rem;
   }
-  footer {
-    display: grid;
-    position: relative;
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .banner {
+    margin-top: 80px;
+  }
+
+  .plants h2 {
+    font-size: 1.8rem;
+  }
+
+  .cards {
     grid-template-columns: 1fr;
-    padding: 10px;
-    gap: 10px;
+    gap: 20px;
+  }
+
+  .email-div {
+    flex-direction: column;
+    gap: 15px !important;
+  }
+
+  .news-letter-container input {
+    width: 100% !important;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
   }
 }
