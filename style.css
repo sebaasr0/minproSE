@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 :root {
-  --special-color: #00ff77;
-  background-color: rgb(242, 246, 247);
+  --special-color: #8B4513;
+  background-color: #F5F5DC;
 }
 
 body {
@@ -48,7 +48,7 @@ p {
   align-items: center;
   justify-content: space-around;
   flex-wrap: nowrap;
-  background: rgb(236, 238, 247); /* Optional background */
+  background: #E8DCC4; /* Optional background */
   border-radius: 5px;
   margin: 10px auto;
   box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, 0.2); /* h v blur spread color */
@@ -68,7 +68,7 @@ p {
 }
 
 .special-color {
-  color: #ff9900;
+  color: #6F4E37;
 }
 
 .horizontal-menu {
@@ -88,7 +88,7 @@ p {
   /* Styles the links as blocks to fill the width */
   display: block;
   padding: 5px 5px; /* Adds padding inside each menu item */
-  background-color: #f4f4f4;
+  background-color: #E8DCC4;
   color: var(--special-color);
   text-decoration: none; /* Removes default underline */
   border-radius: 4px;
@@ -148,7 +148,7 @@ p {
 }
 
 .card {
-  background-color: aliceblue;
+  background-color: #FFF8DC;
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
@@ -188,7 +188,7 @@ button {
 button:hover {
   /* Hover effect: changes background color when the user hovers over the button */
 
-  background-color: #008cba; /* A different color on hover */
+  background-color: #6B4423; /* A different color on hover */
 }
 
 .news-letter-container {
@@ -223,7 +223,7 @@ footer {
   z-index: 999;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background: rgb(236, 238, 247); /* Optional background */
+  background: #E8DCC4; /* Optional background */
   /* max-width: fit-content; */
   padding: 40px;
   gap: 20px;
